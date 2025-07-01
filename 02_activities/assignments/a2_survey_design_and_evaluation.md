@@ -21,57 +21,113 @@ Select one of the scenarios below and design a survey to meet the need(s) outlin
 
 For the **Canadian General Social Survey on Giving, Volunteering, and Participating, 2018 (cycle 33)**, conducted by Statistics Canada find any and all available documentation for the data gathered and identify and describe the survey features indicated below.
 
-1. Sample type
-2. Sample size
-3. Target population
-4. Sampling frame
-5. Survey mode(s) 
-6. Timeline
-7. Response rate
-8. Weights
-9. Data processing
-10. Cleaning, imputation, etc
-11. Sources of error
-12. Limitations, known biases, etc
-13. Link to documentation and any additional sources used
+1. Sample type: Multi-stage stratified (two-phase)
+2. Sample size: 80,000 individuals (60,000 regular sample, 20,000 oversample)
+3. Target population: All persons 15 years of age and older in Canada, excluding residents of the Yukon, Northwest Territories, and Nunavut, full-time residents of institutions, and residents of First Nations reserves
+4. Sampling frame: From the first phase, 1 household out of four (systematically selected across Canada).  
+5. Survey mode(s): electronic questionnaire (EQ) or computer assisted telephone interviewing (CATI) 
+6. Timeline: 2023-09-15 to 2024-03-30
+7. Response rate: 40.9% (42.2% for regular sample and 37.1% for oversample)
+8. Weights: To adjust for the "rejecting" of a proportion of respondents that are not volunteers, the person weight for respondents that are not 'rejected' and not volunteers is multiplied by an undisclosed factor. For the rest, weights were adjusted so that weighted income distribution of matched the 2022 Canadian Income Survey distribution by province (WGHT_PER). Bootstrap weights were also created.
+9. Data processing: Used the Social Survey Processing Environment (SSPE). Edits were performed automatically and manually at various stages, including data verification and flow edits.
+10. Cleaning, imputation, etc: For records w/ missing or incorrect information, in a small # of cases, head office completed, corrected deterministically, or imputed from other info on the questionnaire. For almost all cases, all imputations were made using donor imputation, which uses donor records selected through a score function to impute missing values. Recipient records (records with item or partial non-response) were matched with donor records based on shared characteristics, then the donor with the highest score filled in the missing info. If multiple donors had the highest score, one was randomly selected. Mean imputation was used as an alternative when donor imputation could not be used. Imputation was carried out in 4 blocks: 1) imputation of personal income and family income, 2) imputation of variables related to donations, 3) imputation of formal volunteering variables, and 4) imputation of informal volunteering variables
+11. Sources of error: Common sources of non-sampling error are imperfect coverage nd non-response. 
+12. Limitations, known biases, etc: Persons without good contact info represent a part of the target population that was excluded from the surveyed population - so to the extent that the excluded population differs from the rest of the target population, the results could be biased. Overall, much effort was taken to limit bias.
+13. Link to documentation and any additional sources used: https://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&amp;SDDS=4430#a1
 
 
 # Your Changes
 
 ## Part A - Survey Design: 
 
-The number of your chosen topic: `#`
+The number of your chosen topic: 1
 
 Describe the purpose of your survey:
 ```
-write your answer here...
+The purpose of my survey is to understand what is causing the high turnover rate across many of my company's departments, specifically  within the entry- and lower-level positions. I wish to understand why this turnover is happening, and what changes need to occur to improve employee satisfaction.
 ```
 
 Describe your target population, sampling frame, sampling units, and observational units:
 ```
-write your answer here...
+Target population: All current and recently-departed (within the last 1 year) employees in the company, across all departments, within entry- and lower-level positions
+Sampling frame: HR database with first name, last name, address, and contact information for all individuals in the target population
+Sampling units: Each individual employee
+Observational units: Each individual employee (same as sampling unit in this csae)
 ```
 
 Your 5-10 question survey:
 ```
-1. write your question here...
-2. write your question here...
-3. write your question here...
-4. write your question here...
-5. write your question here...
-6. write your question here... (optional)
-7. write your question here... (optional)
-8. write your question here... (optional)
-9. write your question here... (optional)
-10. write your question here... (optional)
-```
+1. How long did you work (or have been working) for the company? 
+    - Less than 6 months
+    - 6 months to 1 year
+    - 1-2 years
+    - 2-3 years
+    - 3+ years
+2. How satisfied were you with all facets of your employee experience during your time at the company?
+    - Very satisfied
+    - Satisfied
+    - Neither satisfied nor dissatisfied
+    - Disatisfied
+    - Very dissatisfied
+3. For previous employees: What was the primary reason you decided to leave your role? For current employees, what are the primary reasons you might consider leaving your role?
+    - Compensation
+    - Lack of career development opportunities
+    - Work / life balance
+    - Work culture / environment
+    - Relationship with manager or peers
+    - Other reasons (please specify)
+4. How would you rate the effectiveness of your manager in supporting your career and development?
+    - Excellent
+    - Good
+    - Fair
+    - Poor
+5. How satisfied were/are you with opportunities for career growth and advancement?
+    - Very satisfied
+    - Satisfied
+    - Neither satisfied nor dissatisfied
+    - Disatisfied
+    - Very dissatisfied
+6. To what extent did you feel valued and recognized for your contributions?
+    - Always
+    - Often
+    - Sometimes
+    - Rarely
+    - Never
+7. How fair and competitive did/do you find your compensation package?
+    - Very fair
+    - Somewhat fair
+    - Neutral
+    - Somewhat unfair
+    - Very unfair
+8. What changes do you think would most improve employee satisfaction and retention?
+    - Open-ended
+9. How likely are you to recommend this company as a good place to work to a friend?
+    - Very likely
+    - Somewhat likely
+    - Neutral
+    - Somewhat unlikely
+    - Very unlikely
+10. Any additional feedback you'd like to share?
+    - Open-ended
 
 ## Part B - Survey Evaluation:
 
 Identify and describe survey features:
 
 ```
-write your answer here
+1. Sample type: Stratified random sampling (current vs. former employees, by department)
+2. Sample size: Aiming for 50% of all employees who have left in the past 12 months and 50% of all current employees
+3. Target population: All employees in the entry- and lower-level positions across all departments in the company who are either currently employed there or have left the company within the last 12 months
+4. Sampling frame: HR database containing first name, last name, employment status, employment duration / tenure, department, and contact information
+5. Survey mode(s): Online questionnaire distributed by email, with an option to complete by phone upon request. For current employees, it will go to their work emails. For former employees, it will go to their personal email saved in the HR database
+6. Timeline: 6 months
+7. Response rate: Anticipated response rate of ~50%
+8. Weights: If needed, post-stratification weights will be applied to adjust for responses from disgruntled employees, as well as differential non-response by employment status and department
+9. Data processing: Data will be exported from the survey platform (likely Qualtrics or SurveyMonkey) into the analysis environment (Excel, statistical software). Responses will be checked for completeness and consistency.
+10. Cleaning, imputation, etc.: Records with partial item non-response (e.g., skipped questions) will be flagged; if missing values are minimal, they will be imputed using mean or mode imputation within strata (current/former employees). Open-ended responses will be reviewed manually for categorization and redaction of identifying information.
+11. Sources of error: Potential non-sampling errors include non-response bias, recall bias (particularly among former employees), and social desirability bias
+12. Limitations, known biases, etc: Employees who left may differ systematically from those who are currently still employed at the company - their perspectives may not be fully comparable. Current employes may not be fully honest despite confidentiality assurances, due to fear of retribution or retaliation from the company. 
+13. Link to documentation and any additional sources used: None
 ```
 
 ## Rubric
